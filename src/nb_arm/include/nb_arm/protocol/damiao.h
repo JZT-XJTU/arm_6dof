@@ -341,6 +341,7 @@ namespace damiao
         static constexpr float KD_MAX_4340 = 5.0f;
 
         static constexpr float T_MIN_4340 = -28.0f;
+        static constexpr float T_MAX_4340 = 28.0f;
 
         float desir_motor_pos_protect_max[MOTOR_NUM] = {1.5, 1.45, 1.50, 1.57, 1.57, 1.57};
         float desir_motor_pos_protect_min[MOTOR_NUM] = {-1.5, -1.5, -1.5, -1.57, -1.57, -1.57};

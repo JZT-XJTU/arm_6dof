@@ -1,0 +1,13 @@
+build/
+devel/
+install/
+log/
+.logs/
+CMakeFiles/
+CMakeCache.txt
+cmake-build-*/
+.colcon/
+.vscode/
+.idea/
+*.swp
+*.pyc
