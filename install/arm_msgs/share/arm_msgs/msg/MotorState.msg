@@ -1,1 +1,0 @@
-/home/jzt/nb_arm_ws/src/arm_msgs/msg/MotorState.msg

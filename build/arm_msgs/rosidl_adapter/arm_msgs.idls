@@ -1,6 +1,0 @@
-/home/jzt/nb_arm_ws/build/arm_msgs/rosidl_adapter/arm_msgs:msg/MotorCommand.idl
-/home/jzt/nb_arm_ws/build/arm_msgs/rosidl_adapter/arm_msgs:msg/MotorState.idl
-/home/jzt/nb_arm_ws/build/arm_msgs/rosidl_adapter/arm_msgs:msg/RobotCommand.idl
-/home/jzt/nb_arm_ws/build/arm_msgs/rosidl_adapter/arm_msgs:msg/RobotState.idl
-/home/jzt/nb_arm_ws/build/arm_msgs/rosidl_adapter/arm_msgs:msg/MotorMitCmdTau.idl
-/home/jzt/nb_arm_ws/build/arm_msgs/rosidl_adapter/arm_msgs:msg/RobotMitCmdTau.idl

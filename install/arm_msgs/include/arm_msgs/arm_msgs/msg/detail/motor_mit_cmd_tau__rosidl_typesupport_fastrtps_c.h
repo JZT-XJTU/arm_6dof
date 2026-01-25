@@ -1,1 +1,0 @@
-/home/jzt/nb_arm_ws/build/arm_msgs/rosidl_typesupport_fastrtps_c/arm_msgs/msg/detail/motor_mit_cmd_tau__rosidl_typesupport_fastrtps_c.h

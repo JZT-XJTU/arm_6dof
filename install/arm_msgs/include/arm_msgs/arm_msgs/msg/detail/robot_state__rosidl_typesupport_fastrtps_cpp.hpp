@@ -1,1 +1,0 @@
-/home/jzt/nb_arm_ws/build/arm_msgs/rosidl_typesupport_fastrtps_cpp/arm_msgs/msg/detail/robot_state__rosidl_typesupport_fastrtps_cpp.hpp

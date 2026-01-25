@@ -1,1 +1,0 @@
-/home/jzt/nb_arm_ws/build/arm_msgs/rosidl_generator_py/arm_msgs/msg/_motor_command.py

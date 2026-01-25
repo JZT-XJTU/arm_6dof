@@ -1,4 +1,0 @@
-source;share/arm_msgs/local_setup.bash
-source;share/arm_msgs/local_setup.dsv
-source;share/arm_msgs/local_setup.sh
-source;share/arm_msgs/local_setup.zsh

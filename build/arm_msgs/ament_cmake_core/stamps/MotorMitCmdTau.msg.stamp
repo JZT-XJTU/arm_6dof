@@ -1,1 +1,0 @@
-float32 tau        # motor target torque(有mit控制模式公式计算得到)

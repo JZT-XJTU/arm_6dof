@@ -11,3 +11,9 @@ cmake-build-*/
 .idea/
 *.swp
 *.pyc
+# secrets / keys
+*.pem
+*.key
+id_*
+keys
+secrets/

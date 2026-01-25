@@ -1,2 +1,0 @@
-/usr/bin/ar qc libmotor.a CMakeFiles/motor.dir/src/protocol/damiao.cpp.o
-/usr/bin/ranlib libmotor.a

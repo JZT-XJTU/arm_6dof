@@ -1,1 +1,0 @@
-/home/jzt/nb_arm_ws/src/nb_arm/launch/arm_control_sim.launch.py
