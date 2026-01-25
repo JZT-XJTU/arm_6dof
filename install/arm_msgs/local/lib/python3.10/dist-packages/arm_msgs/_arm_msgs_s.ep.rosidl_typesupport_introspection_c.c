@@ -1,0 +1,1 @@
+/home/jzt/nb_arm_ws/build/arm_msgs/rosidl_generator_py/arm_msgs/_arm_msgs_s.ep.rosidl_typesupport_introspection_c.c

@@ -1,0 +1,1 @@
+/home/jzt/nb_arm_ws/build/arm_msgs/ament_cmake_core/arm_msgsConfig-version.cmake

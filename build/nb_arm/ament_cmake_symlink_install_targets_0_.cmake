@@ -1,0 +1,1 @@
+ament_cmake_symlink_install_targets("TARGET_FILES" "/home/jzt/nb_arm_ws/build/nb_arm/arm_main_node" "/home/jzt/nb_arm_ws/build/nb_arm/arm_control_sim_node" "TARGETS" "arm_main_node" "arm_control_sim_node" "DESTINATION" "lib/nb_arm")

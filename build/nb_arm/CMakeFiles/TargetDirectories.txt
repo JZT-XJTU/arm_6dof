@@ -1,0 +1,12 @@
+/home/jzt/nb_arm_ws/build/nb_arm/CMakeFiles/uninstall.dir
+/home/jzt/nb_arm_ws/build/nb_arm/CMakeFiles/nb_arm_uninstall.dir
+/home/jzt/nb_arm_ws/build/nb_arm/CMakeFiles/motor.dir
+/home/jzt/nb_arm_ws/build/nb_arm/CMakeFiles/arm_main_node.dir
+/home/jzt/nb_arm_ws/build/nb_arm/CMakeFiles/arm_control_sim_node.dir
+/home/jzt/nb_arm_ws/build/nb_arm/CMakeFiles/test.dir
+/home/jzt/nb_arm_ws/build/nb_arm/CMakeFiles/edit_cache.dir
+/home/jzt/nb_arm_ws/build/nb_arm/CMakeFiles/rebuild_cache.dir
+/home/jzt/nb_arm_ws/build/nb_arm/CMakeFiles/list_install_components.dir
+/home/jzt/nb_arm_ws/build/nb_arm/CMakeFiles/install.dir
+/home/jzt/nb_arm_ws/build/nb_arm/CMakeFiles/install/local.dir
+/home/jzt/nb_arm_ws/build/nb_arm/CMakeFiles/install/strip.dir

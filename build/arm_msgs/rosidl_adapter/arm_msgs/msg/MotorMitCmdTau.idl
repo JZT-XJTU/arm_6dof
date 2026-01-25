@@ -1,0 +1,14 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from arm_msgs/msg/MotorMitCmdTau.msg
+// generated code does not contain a copyright notice
+
+
+module arm_msgs {
+  module msg {
+    struct MotorMitCmdTau {
+      @verbatim (language="comment", text=
+        "motor target torque(有mit控制模式公式计算得到)")
+      float tau;
+    };
+  };
+};

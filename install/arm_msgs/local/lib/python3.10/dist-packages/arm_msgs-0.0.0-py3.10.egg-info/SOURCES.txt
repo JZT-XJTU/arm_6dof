@@ -1,0 +1,1 @@
+/home/jzt/nb_arm_ws/build/arm_msgs/ament_cmake_python/arm_msgs/arm_msgs.egg-info/SOURCES.txt

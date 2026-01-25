@@ -1,0 +1,13 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from arm_msgs/msg/RobotState.msg
+// generated code does not contain a copyright notice
+
+#include "arm_msgs/msg/MotorState.idl"
+
+module arm_msgs {
+  module msg {
+    struct RobotState {
+      sequence<arm_msgs::msg::MotorState> motor_state;
+    };
+  };
+};
