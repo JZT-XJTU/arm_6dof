@@ -201,41 +201,41 @@ namespace damiao
         uint8_t motorData_5[8] = {0};
         uint8_t motorData_6[8] = {0};
 
-        for (size_t i = 0; i < MOTOR_NUM; i++)
-        {
-            if (pos[i] > desir_motor_pos_protect_max[i])
-            {
-                std::cout << "joint" << i << " desir pos out range:" << " " << pos[i] << std::endl;
-                pos[i] = desir_motor_pos_protect_max[i];
-            }
-            if (pos[i] < desir_motor_pos_protect_min[i])
-            {
-                std::cout << "joint" << i << " desir pos out range:" << " " << pos[i] << std::endl;
-                pos[i] = desir_motor_pos_protect_min[i];
-            }
+        // for (size_t i = 0; i < MOTOR_NUM; i++)
+        // {
+            // if (pos[i] > desir_motor_pos_protect_max[i])
+        //     {
+        //         std::cout << "joint" << i << " desir pos out range:" << " " << pos[i] << std::endl;
+        //         pos[i] = desir_motor_pos_protect_max[i];
+        //     }
+        //     if (pos[i] < desir_motor_pos_protect_min[i])
+        //     {
+        //         std::cout << "joint" << i << " desir pos out range:" << " " << pos[i] << std::endl;
+        //         pos[i] = desir_motor_pos_protect_min[i];
+        //     }
 
-            if (vel[i] > desir_motor_vel_protect_max[i])
-            {
-                std::cout << "joint" << i << " desir vel out range:" << " " << vel[i] << std::endl;
-                vel[i] = desir_motor_vel_protect_max[i];
-            }
-            if (vel[i] < desir_motor_vel_protect_min[i])
-            {
-                std::cout << "joint" << i << " desir vel out range:" << " " << vel[i] << std::endl;
-                vel[i] = desir_motor_vel_protect_min[i];
-            }
+        //     if (vel[i] > desir_motor_vel_protect_max[i])
+        //     {
+        //         std::cout << "joint" << i << " desir vel out range:" << " " << vel[i] << std::endl;
+        //         vel[i] = desir_motor_vel_protect_max[i];
+        //     }
+        //     if (vel[i] < desir_motor_vel_protect_min[i])
+        //     {
+        //         std::cout << "joint" << i << " desir vel out range:" << " " << vel[i] << std::endl;
+        //         vel[i] = desir_motor_vel_protect_min[i];
+        //     }
 
-            if (tff[i] > desir_motor_tau_protect_max[i])
-            {
-                std::cout << "joint" << i << " desir tau out range:" << " " << tff[i] << std::endl;
-                tff[i] = desir_motor_tau_protect_max[i];
-            }
-            if (tff[i] < desir_motor_tau_protect_min[i])
-            {
-                std::cout << "joint" << i << " desir tau out range:" << " " << tff[i] << std::endl;
-                tff[i] = desir_motor_tau_protect_min[i];
-            }
-        } 
+        //     if (tff[i] > desir_motor_tau_protect_max[i])
+        //     {
+        //         std::cout << "joint" << i << " desir tau out range:" << " " << tff[i] << std::endl;
+        //         tff[i] = desir_motor_tau_protect_max[i];
+        //     }
+        //     if (tff[i] < desir_motor_tau_protect_min[i])
+        //     {
+        //         std::cout << "joint" << i << " desir tau out range:" << " " << tff[i] << std::endl;
+        //         tff[i] = desir_motor_tau_protect_min[i];
+        //     }
+        // }
         // printf("[CtrlMotors] Pos:%f,vel:%f,kp:%f,kd:%f,tff:%f | ", pos[0], vel[0], kp[0], kd[0], tff[0]);
         // printf("[CtrlMotors] Pos:%f,vel:%f,kp:%f,kd:%f,tff:%f | ", pos[1], vel[1], kp[1], kd[1], tff[1]);
         // printf("[CtrlMotors] Pos:%f,vel:%f,kp:%f,kd:%f,tff:%f | ", pos[2], vel[2], kp[2], kd[2], tff[2]);
@@ -279,7 +279,8 @@ namespace damiao
         std::vector<uint8_t> enable_data = {0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xfe}; // enable首字母是e，所以末数据是fe，随意制定，与电机协议无关
         can_tx_type tx_msg;
         printf("[Tx Enable] ID:0x0B Data:");
-        for(auto v : enable_data) printf(" %02X", v);
+        for (auto v : enable_data)
+            printf(" %02X", v);
         printf("\n");
         usb_hw->fillFDCANFrame(enable_data, tx_msg, 0x0B);
         usb_hw->set_tx_frame(&tx_msg);
@@ -291,7 +292,8 @@ namespace damiao
         std::vector<uint8_t> disable_data = {0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xfd}; // disable首字母是d，所以末数据是fd
         can_tx_type tx_msg;
         printf("[Tx Disable] ID:0x0B Data:");
-        for(auto v : disable_data) printf(" %02X", v);
+        for (auto v : disable_data)
+            printf(" %02X", v);
         printf("\n");
         usb_hw->fillFDCANFrame(disable_data, tx_msg, 0x0B);
         usb_hw->set_tx_frame(&tx_msg);
@@ -680,30 +682,30 @@ namespace damiao
         {
             // if (value.data[0] == 0xAB)
             // {
-                // 这是正常返回的位置速度力矩数据
-                uint16_t q_uint = (uint16_t(value.data[1]) << 8) | value.data[2];
-                uint16_t dq_uint = (uint16_t(value.data[3]) << 4) | (value.data[4] >> 4);
-                uint16_t tau_uint = (uint16_t(value.data[4] & 0xf) << 8) | value.data[5];
+            // 这是正常返回的位置速度力矩数据
+            uint16_t q_uint = (uint16_t(value.data[1]) << 8) | value.data[2];
+            uint16_t dq_uint = (uint16_t(value.data[3]) << 4) | (value.data[4] >> 4);
+            uint16_t tau_uint = (uint16_t(value.data[4] & 0xf) << 8) | value.data[5];
 
-                if (motors.find(canID) == motors.end())
-                {
-                    return;
-                }
-                auto m = motors[canID];
-                uint8_t motor_id = canID - 0x200;
-                float receive_q = uint_to_float(q_uint, P_MIN_4340, P_MAX_4340, 16);
-                float receive_dq = uint_to_float(dq_uint, V_MIN_4340, V_MAX_4340, 12);
-                float receive_tau = uint_to_float(tau_uint, T_MIN_4340, T_MAX_4340, 12);
+            if (motors.find(canID) == motors.end())
+            {
+                return;
+            }
+            auto m = motors[canID];
+            uint8_t motor_id = canID - 0x200;
+            float receive_q = uint_to_float(q_uint, P_MIN_4340, P_MAX_4340, 16);
+            float receive_dq = uint_to_float(dq_uint, V_MIN_4340, V_MAX_4340, 12);
+            float receive_tau = uint_to_float(tau_uint, T_MIN_4340, T_MAX_4340, 12);
 
-                current_motor_pos[motor_id] = receive_q;
-                current_motor_vel[motor_id] = receive_dq;
-                current_motor_tor[motor_id] = receive_tau;
-                std::cout<<"[Rx Motor ID: "<<int(motor_id) <<"] Pos: "<<receive_q<<" Vel: "<<receive_dq<<" Tau: "<<receive_tau<<std::endl;
-                m->receive_data(receive_q, receive_dq, receive_tau);
+            current_motor_pos[motor_id] = receive_q;
+            current_motor_vel[motor_id] = receive_dq;
+            current_motor_tor[motor_id] = receive_tau;
+            // std::cout << "[Rx Motor ID: " << int(motor_id) << "] Pos: " << receive_q << " Vel: " << receive_dq << " Tau: " << receive_tau << std::endl;
+            m->receive_data(receive_q, receive_dq, receive_tau);
 
-                m->updateTimeInterval();
+            m->updateTimeInterval();
 
-                // std::cerr<<"motor id is: "<<canID<<": "<<interval<<std::endl;
+            // std::cerr<<"motor id is: "<<canID<<": "<<interval<<std::endl;
             // }
         }
     }

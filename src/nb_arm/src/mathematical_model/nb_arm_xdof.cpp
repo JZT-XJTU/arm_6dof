@@ -101,7 +101,7 @@ void nb_arm_xdof::init(const std::string &urdf_file)
     current_joint_torques.data.setZero();
     current_joint_acceleration.data.setZero();
 
-    home_joint_positions.data << 1, -1, 1, -1, 1, -1; //////////////     一定要注意修改这个初始位置！！！    ///////////////////
+    home_joint_positions.data << 0, -1, 1, 0, 0, 0; //////////////     一定要注意修改这个初始位置！！！    ///////////////////
 
     // 初始化当前和期望的雅可比矩阵
     current_jacobian = KDL::Jacobian(kdl_chain.getNrOfJoints());

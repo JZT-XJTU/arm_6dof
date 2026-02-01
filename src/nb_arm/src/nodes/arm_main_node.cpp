@@ -3,21 +3,21 @@
 
 arm_node::arm_node() : Node("arm_node")
 {
-    this->declare_parameter<std::string>("urdf_file", "src/nb_arm/urdf/first_robot.urdf");
+    this->declare_parameter<std::string>("urdf_file", "src/nb_arm/urdf/ur5.urdf");
     this->declare_parameter<std::string>("control_mode", "Zero");
 
     uint16_t canid1 = 0x01;
-    uint16_t mstid1 = 0x201;
+    uint16_t mstid1 = 0x200;
     uint16_t canid2 = 0x02;
-    uint16_t mstid2 = 0x202;
+    uint16_t mstid2 = 0x201;
     uint16_t canid3 = 0x03;
-    uint16_t mstid3 = 0x203;
+    uint16_t mstid3 = 0x202;
     uint16_t canid4 = 0x04;
-    uint16_t mstid4 = 0x204;
+    uint16_t mstid4 = 0x203;
     uint16_t canid5 = 0x05;
-    uint16_t mstid5 = 0x205;
+    uint16_t mstid5 = 0x204;
     uint16_t canid6 = 0x06;
-    uint16_t mstid6 = 0x206;
+    uint16_t mstid6 = 0x205;
     uint32_t nom_baud = 1000000;
     uint32_t dat_baud = 2000000;
     std::vector<damiao::DmActData> init_data;
@@ -47,6 +47,7 @@ arm_node::arm_node() : Node("arm_node")
                                           .mst_id = mstid6});
     motor = std::make_shared<damiao::Motor_Control>(nom_baud, dat_baud,
                                                     "9940F4E149D904A69924737E3DE6629F", &init_data);
+                                                    // "64B92126C3D2445D9BACA507157D8BAC", &init_data);
 
     init();
 

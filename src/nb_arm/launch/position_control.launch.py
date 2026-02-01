@@ -12,13 +12,13 @@ def generate_launch_description():
 
     # 节点配置
     arm_node = Node(
-        package='nb_arm',
+        package='nb_arm',        
         executable='arm_main_node',
         name='arm_node',
         output='screen',
         parameters=[
             {'urdf_file': urdf_file},
-            {'control_mode': 'Zero'}  # 设置控制模式为 Position
+            {'control_mode': 'Zero'}  # 设置控制模式
         ]
     )
 

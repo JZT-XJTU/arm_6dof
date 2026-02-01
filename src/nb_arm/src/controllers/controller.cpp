@@ -105,7 +105,7 @@ bool controller::get_trajectory(
     for (int i = 0; i <= num_points; ++i)
     {
         // 1. 获取当前时间点的笛卡尔目标
-        float t = i * dt;                            // 计算当前时间点
+        float t = i * dt;                             // 计算当前时间点
         KDL::Frame x_ref = trajectory_com->Pos(t);    // 获取此时末端执行器应在的【位置和姿态】
         KDL::Twist xdot_ref = trajectory_com->Vel(t); // 获取此时末端执行器应有的【线速度和角速度】
         // 2. 求解逆向运动学
@@ -459,7 +459,7 @@ void controller::HybridForceControl(nb_arm_xdof &arm_model, damiao::Motor_Contro
 // }
 
 // 加入前馈力矩补偿的位控
-// 基于时间尺度的轨迹跟踪，
+// 基于时间尺度的轨迹跟踪
 void controller::PositionControl(nb_arm_xdof &arm_model, damiao::Motor_Control &motor)
 {
     // 测试用预设路径点
@@ -628,6 +628,10 @@ void controller::go_home(nb_arm_xdof &arm_model, damiao::Motor_Control &motor)
     std::cout << "执行 go_home 控制..." << std::endl;
     KDL::Frame home_pose;
     int ret = arm_model.fk_solver_pos->JntToCart(arm_model.home_joint_positions, home_pose);
+    std::cout << "home position: "
+              << home_pose.p.x() << ", "
+              << home_pose.p.y() << ", "
+              << home_pose.p.z() << std::endl;
     if (ret != 0)
     {
         std::cerr << "go_home 中 fk_solver_pos->JntToCart 计算失败, 错误码 = " << ret << std::endl;
@@ -639,6 +643,10 @@ void controller::go_home(nb_arm_xdof &arm_model, damiao::Motor_Control &motor)
         motor.current_motor_vel,
         motor.current_motor_tor);
     int ret_current = arm_model.fk_solver_pos->JntToCart(arm_model.current_joint_positions, current_pose);
+    std::cout << "current position: "
+              << current_pose.p.x() << ", "
+              << current_pose.p.y() << ", "
+              << current_pose.p.z() << std::endl;
     if (ret_current != 0)
     {
         std::cerr << "go_home 中 fk_solver_pos->JntToCart 计算失败, 错误码 = " << ret_current << std::endl;
@@ -646,7 +654,7 @@ void controller::go_home(nb_arm_xdof &arm_model, damiao::Motor_Control &motor)
     }
     std::vector<KDL::Frame> home_waypoints = {current_pose, home_pose};
     auto path = traj_gen.generate_line_path(home_waypoints);                                  // 直线路径
-    bool trajectory_valid = get_trajectory(arm_model, traj_gen, std::move(path), false, 2.0); // 样条插值速度
+    bool trajectory_valid = get_trajectory(arm_model, traj_gen, std::move(path), false, 5.0); // 样条插值速度
 
     if (!trajectory_valid)
     {
@@ -668,7 +676,7 @@ void controller::go_home(nb_arm_xdof &arm_model, damiao::Motor_Control &motor)
             motor.current_motor_tor);
     }
 
-    // 防止机械臂当前位置和轨迹起点相差太远导致猛冲
+    // // 防止机械臂当前位置和轨迹起点相差太远导致猛冲
     // float start_error = distanceSq(arm_model.current_joint_positions, q_ref_trajectory_[0]);
     // if (start_error > 0.1f)
     // { // 阈值需根据实际情况调整
@@ -749,8 +757,8 @@ void controller::go_home(nb_arm_xdof &arm_model, damiao::Motor_Control &motor)
             motor.mit_kp[0] = 35.0;
             motor.mit_kd[0] = 1.51;
 
-            motor.mit_kp[1] = 27.0;
-            motor.mit_kd[1] = 2.01;
+            motor.mit_kp[1] = 20.0;
+            motor.mit_kd[1] = 1.01;
 
             motor.mit_kp[2] = 27.0;
             motor.mit_kd[2] = 2.01;
