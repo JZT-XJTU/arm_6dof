@@ -8,12 +8,12 @@
 
 工作空间包含以下核心 ROS 2 功能包：
 
-- **`nb_arm`**: 机械臂的核心控制功能包。
-  - 使用了 `rclcpp` 编写 C++ 节点。
+- **`nb_arm`**: 机械臂的核心控制功能包
+  - 使用了 `rclcpp` 编写 C++ 节点
   - 集成了 `Eigen3`、`orocos_kdl` 和 `kdl_parser` 进行动力学/运动学计算
   - 支持 `urdf` 解析
   - 依赖标准 ROS 2 消息（`sensor_msgs`, `nav_msgs`, `tf2_ros` 等）和自定义消息 `arm_msgs`
-- **`arm_msgs`**: 自定义通信消息包。定义了底层电机和直接关节控制的数据结构（类似 MIT 控制模式）。主要包含：
+- **`arm_msgs`**: 自定义通信消息包。定义了底层电机和直接关节控制的数据结构（ MIT 控制模式）。主要包含：
   - `MotorCommand.msg` / `MotorState.msg`
   - `MotorMitCmdTau.msg`
   - `RobotCommand.msg` / `RobotState.msg`
