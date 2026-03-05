@@ -45,7 +45,7 @@ sudo apt install libeigen3-dev
 source install/setup.bash
 ```
 
-可以启动对应的 launch 文件执行对应功能，例如运行position_control
+可以启动对应的 launch 文件执行对应功能，例如运行 position_control
 
 ```bash
 ros2 launch nb_arm position_control.launch.py
