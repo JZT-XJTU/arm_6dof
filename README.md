@@ -35,7 +35,7 @@ sudo apt install libeigen3-dev
 
 ## 🚀 编译与构建
 
-克隆项目并进入工作空间根目录（`/home/jzt/nb_arm_ws`），然后使用 `colcon` 进行构建
+克隆项目并进入工作空间根目录（`~/arm_ws`），然后使用 `colcon` 进行构建
 
 ## ⚙️ 运行与测试
 
