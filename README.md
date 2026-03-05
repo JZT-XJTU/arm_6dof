@@ -1,4 +1,4 @@
-# nb_arm_ws
+# arm_6dof
 
 
 这是一个基于 ROS 2 和 KDL 的机械臂控制项目, 项目运行依赖下位机和 DM USB2FDCAN 通信模块
